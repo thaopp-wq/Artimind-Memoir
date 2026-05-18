@@ -17,9 +17,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E1000050"
-               BuildableName = "ArtimindAIAlbumWidgetsExtension.appex"
-               BlueprintName = "ArtimindAIAlbumWidgetsExtension"
-               ReferencedContainer = "container:ArtimindAIAlbum.xcodeproj">
+               BuildableName = "ArtimindVoiceTributeWidgetsExtension.appex"
+               BlueprintName = "ArtimindVoiceTributeWidgetsExtension"
+               ReferencedContainer = "container:ArtimindVoiceTribute.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,9 +31,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E1000001"
-               BuildableName = "ArtimindAIAlbum.app"
-               BlueprintName = "ArtimindAIAlbum"
-               ReferencedContainer = "container:ArtimindAIAlbum.xcodeproj">
+               BuildableName = "ArtimindVoiceTribute.app"
+               BlueprintName = "ArtimindVoiceTribute"
+               ReferencedContainer = "container:ArtimindVoiceTribute.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -63,18 +63,18 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E1000050"
-            BuildableName = "ArtimindAIAlbumWidgetsExtension.appex"
-            BlueprintName = "ArtimindAIAlbumWidgetsExtension"
-            ReferencedContainer = "container:ArtimindAIAlbum.xcodeproj">
+            BuildableName = "ArtimindVoiceTributeWidgetsExtension.appex"
+            BlueprintName = "ArtimindVoiceTributeWidgetsExtension"
+            ReferencedContainer = "container:ArtimindVoiceTribute.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E1000001"
-            BuildableName = "ArtimindAIAlbum.app"
-            BlueprintName = "ArtimindAIAlbum"
-            ReferencedContainer = "container:ArtimindAIAlbum.xcodeproj">
+            BuildableName = "ArtimindVoiceTribute.app"
+            BlueprintName = "ArtimindVoiceTribute"
+            ReferencedContainer = "container:ArtimindVoiceTribute.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <EnvironmentVariables>
@@ -108,9 +108,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E1000001"
-            BuildableName = "ArtimindAIAlbum.app"
-            BlueprintName = "ArtimindAIAlbum"
-            ReferencedContainer = "container:ArtimindAIAlbum.xcodeproj">
+            BuildableName = "ArtimindVoiceTribute.app"
+            BlueprintName = "ArtimindVoiceTribute"
+            ReferencedContainer = "container:ArtimindVoiceTribute.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

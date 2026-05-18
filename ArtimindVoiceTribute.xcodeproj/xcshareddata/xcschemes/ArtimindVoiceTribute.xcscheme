@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E1000001"
-               BuildableName = "ArtimindAIAlbum.app"
-               BlueprintName = "ArtimindAIAlbum"
-               ReferencedContainer = "container:ArtimindAIAlbum.xcodeproj">
+               BuildableName = "ArtimindVoiceTribute.app"
+               BlueprintName = "ArtimindVoiceTribute"
+               ReferencedContainer = "container:ArtimindVoiceTribute.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E1000001"
-            BuildableName = "ArtimindAIAlbum.app"
-            BlueprintName = "ArtimindAIAlbum"
-            ReferencedContainer = "container:ArtimindAIAlbum.xcodeproj">
+            BuildableName = "ArtimindVoiceTribute.app"
+            BlueprintName = "ArtimindVoiceTribute"
+            ReferencedContainer = "container:ArtimindVoiceTribute.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E1000001"
-            BuildableName = "ArtimindAIAlbum.app"
-            BlueprintName = "ArtimindAIAlbum"
-            ReferencedContainer = "container:ArtimindAIAlbum.xcodeproj">
+            BuildableName = "ArtimindVoiceTribute.app"
+            BlueprintName = "ArtimindVoiceTribute"
+            ReferencedContainer = "container:ArtimindVoiceTribute.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

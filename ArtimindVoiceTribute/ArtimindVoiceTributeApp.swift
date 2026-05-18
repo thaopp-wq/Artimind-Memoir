@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct ArtimindAIAlbumApp: App {
+struct ArtimindVoiceTributeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
