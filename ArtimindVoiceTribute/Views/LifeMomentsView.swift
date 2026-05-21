@@ -1,4 +1,5 @@
 import SwiftUI
+import AVKit
 
 struct LifeMomentsView: View {
     @Binding var selectedTab: Int
@@ -66,8 +67,12 @@ struct LifeMomentsView: View {
         ZStack {
             Color.black
 
-            // Background image
-            if !template.thumbnail.isEmpty {
+            // Background video or image fallback
+            if !template.videoPreview.isEmpty,
+               let url = Bundle.main.url(forResource: template.videoPreview, withExtension: "mov") {
+                LoopingVideoPlayer(url: url, isMuted: isCardMuted)
+                    .ignoresSafeArea()
+            } else if !template.thumbnail.isEmpty {
                 GeometryReader { geo in
                     Image(template.thumbnail)
                         .resizable()
@@ -254,6 +259,50 @@ struct LifeMomentsView: View {
         }
     }
 
+}
+
+// MARK: - Looping Video Player
+
+private struct LoopingVideoPlayer: UIViewRepresentable {
+    let url: URL
+    let isMuted: Bool
+
+    func makeUIView(context: Context) -> LoopingPlayerUIView {
+        LoopingPlayerUIView(url: url, isMuted: isMuted)
+    }
+
+    func updateUIView(_ uiView: LoopingPlayerUIView, context: Context) {
+        uiView.player?.isMuted = isMuted
+    }
+}
+
+private class LoopingPlayerUIView: UIView {
+    var player: AVQueuePlayer?
+    private var looper: AVPlayerLooper?
+
+    init(url: URL, isMuted: Bool) {
+        super.init(frame: .zero)
+        let item = AVPlayerItem(url: url)
+        let queuePlayer = AVQueuePlayer(items: [item])
+        looper = AVPlayerLooper(player: queuePlayer, templateItem: item)
+        queuePlayer.isMuted = isMuted
+        player = queuePlayer
+
+        let playerLayer = AVPlayerLayer(player: queuePlayer)
+        playerLayer.videoGravity = .resizeAspectFill
+        layer.addSublayer(playerLayer)
+
+        queuePlayer.play()
+    }
+
+    required init?(coder: NSCoder) { fatalError() }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if let playerLayer = layer.sublayers?.first as? AVPlayerLayer {
+            playerLayer.frame = bounds
+        }
+    }
 }
 
 #Preview {

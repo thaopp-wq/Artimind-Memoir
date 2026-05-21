@@ -44,10 +44,10 @@ extension WeddingTemplate {
         WeddingTemplate(
             id: "wedding_father_speech_01",
             tag: "Wedding",
-            title: "A Father's Blessing",
+            title: "A Dad's Blessing",
             status: .active,
-            thumbnail: "explore-loved-ones",
-            videoPreview: "",
+            thumbnail: "wedding-preview",
+            videoPreview: "wedding-preview",
             audioPreview: "",
             speakerRole: .father,
             peopleNumber: 2,
@@ -71,13 +71,13 @@ extension WeddingTemplate {
             ],
             requiresNames: true,
             nameFields: ["bride_name", "groom_name"],
-            photoLabels: ["Upload a photo of the father", "Upload a photo of the bride"],
+            photoLabels: ["Upload a photo of Dad", "Upload a photo of the bride"],
             speakerPhotoSlot: 0
         ),
         WeddingTemplate(
             id: "wedding_mother_speech_01",
             tag: "Wedding",
-            title: "A Mother's Words",
+            title: "A Mom's Words",
             status: .active,
             thumbnail: "explore-restore",
             videoPreview: "",
@@ -104,7 +104,7 @@ extension WeddingTemplate {
             ],
             requiresNames: true,
             nameFields: ["bride_name", "groom_name"],
-            photoLabels: ["Upload a photo of the mother", "Upload a photo of the groom"],
+            photoLabels: ["Upload a photo of Mom", "Upload a photo of the groom"],
             speakerPhotoSlot: 0
         ),
         WeddingTemplate(
@@ -137,7 +137,7 @@ extension WeddingTemplate {
             ],
             requiresNames: true,
             nameFields: ["bride_name", "groom_name"],
-            photoLabels: ["Upload a photo of the father", "Upload a photo of the bride", "Upload a photo of the groom"],
+            photoLabels: ["Upload a photo of Dad", "Upload a photo of the bride", "Upload a photo of the groom"],
             speakerPhotoSlot: 0
         ),
     ]

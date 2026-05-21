@@ -303,11 +303,18 @@ final class WeddingTributeManager: ObservableObject {
 
                 session.outputURL = outputURL
                 session.outputFileType = .m4a
-                await session.export()
+ 
+                let success: Bool
+                do {
+                    try await session.export(to: outputURL, as: .m4a)
+                    success = true
+                } catch {
+                    success = false
+                }
 
                 await MainActor.run {
                     mgr.isExtractingAudio = false
-                    if session.status == .completed {
+                    if success {
                         mgr.audioFileURL = outputURL
                         mgr.selectedVoiceTone = nil
                     } else {
