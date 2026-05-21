@@ -160,29 +160,14 @@ struct WeddingOutputPreviewView: View {
     // MARK: - Action Buttons
 
     private var actionButtons: some View {
-        HStack(spacing: 12) {
-            // Share button (main, wide)
-            LiquidGlassTextButton(
-                title: "Share",
-                icon: "square.and.arrow.up",
-                font: AppFont.dmSans(.semibold, size: 16),
-                foregroundColor: .white,
-                shape: .capsule,
-                action: handleShare
-            )
-
-            // Recreate button (circle)
-            Button {
-                handleBackToMoments()
-            } label: {
-                Image(systemName: "arrow.clockwise")
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundColor(.white)
-                    .frame(width: 56, height: 56)
-                    .glassBackground(shape: .circle, interactive: true)
-            }
-            .buttonStyle(.plain)
-        }
+        LiquidGlassTextButton(
+            title: "Share",
+            icon: "square.and.arrow.up",
+            font: AppFont.dmSans(.semibold, size: 16),
+            foregroundColor: .white,
+            shape: .capsule,
+            action: handleShare
+        )
     }
 
     // MARK: - Toast
@@ -233,7 +218,6 @@ struct WeddingOutputPreviewView: View {
     }
 
     private func handleBackToMoments() {
-        manager.cancelProcessing()
         NotificationCenter.default.post(name: .popWeddingFlow, object: nil)
     }
 

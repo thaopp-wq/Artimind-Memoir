@@ -14,7 +14,10 @@ struct WeddingProcessingView: View {
             Color.black.ignoresSafeArea()
 
             VStack(spacing: 0) {
-                NavBarView(title: "Bringing Them Back", onBack: { dismiss() })
+                NavBarView(title: "Bringing Them Back", onBack: {
+                    // Back về Home, gen tiếp tục ở background (không cancel)
+                    NotificationCenter.default.post(name: .popWeddingFlow, object: nil)
+                })
                     .padding(.top, 8)
 
                 Spacer(minLength: 40)
