@@ -1,6 +1,7 @@
 import SwiftUI
 import AVFoundation
 import PhotosUI
+import Photos
 
 // MARK: - Feature model
 
@@ -64,6 +65,8 @@ struct RestoreView: View {
     @ObservedObject private var store = PeopleStore.shared
     @State private var selectedPerson: Person?
     @State private var showPeopleList = false
+    @State private var hasPhotoPermission = false
+    @State private var permissionChecked = false
     @State private var showPhotoRestore = false
     @State private var showVoiceTribute = false
     @State private var showColorize = false
@@ -298,34 +301,25 @@ struct RestoreView: View {
     }
 
     private func featureCard(_ feature: FeatureInfo) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
-            // Title + emoji same line
-            HStack(alignment: .center) {
-                Text(feature.title)
-                    .font(AppFont.dmSans(.bold, size: 14))
-                    .foregroundStyle(.white)
+        HStack {
+            Text(feature.title)
+                .font(AppFont.dmSans(.bold, size: 14))
+                .foregroundStyle(.white)
 
-                Spacer()
+            Spacer()
 
-                Text(feature.icon)
-                    .font(.system(size: 26))
-            }
-
-            // Subtitle — full display
-            Text(feature.subtitle)
-                .font(AppFont.dmSans(.regular, size: 11))
-                .foregroundStyle(ArtimindDS.ColorToken.textTertiary)
-                .lineSpacing(2)
-                .fixedSize(horizontal: false, vertical: true)
+            Text(feature.icon)
+                .font(.system(size: 24))
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(14)
+        .padding(.horizontal, 14)
+        .frame(maxWidth: .infinity)
+        .frame(height: 52)
         .background(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .fill(ArtimindDS.ColorToken.panel)
         )
         .overlay(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .stroke(Color.white.opacity(0.18), lineWidth: 1)
         )
     }
@@ -357,20 +351,89 @@ struct RestoreView: View {
                 PeopleListView()
             }
 
-            // Vertical grid of people cards
-            let columns = [
-                GridItem(.flexible(), spacing: 24),
-                GridItem(.flexible(), spacing: 24),
-            ]
-            LazyVGrid(columns: columns, spacing: 24) {
-                ForEach(store.people.prefix(8)) { person in
-                    Button { selectedPerson = person } label: {
-                        PersonCard(person: person)
+            if !permissionChecked || hasPhotoPermission {
+                // Vertical grid of people cards
+                let columns = [
+                    GridItem(.flexible(), spacing: 24),
+                    GridItem(.flexible(), spacing: 24),
+                ]
+                LazyVGrid(columns: columns, spacing: 24) {
+                    ForEach(store.people.prefix(8)) { person in
+                        Button { selectedPerson = person } label: {
+                            PersonCard(person: person)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(.horizontal, ArtimindDS.Size.sidePadding)
+
+                // Add Person button
+                Button { showPeopleList = true } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.system(size: 18))
+                            .foregroundStyle(ArtimindDS.ColorToken.blue)
+                        Text("Add Person")
+                            .font(AppFont.dmSans(.semibold, size: 14))
+                            .foregroundStyle(.white)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
+                .background(
+                    RoundedRectangle(cornerRadius: ArtimindDS.Radius.sm, style: .continuous)
+                        .strokeBorder(ArtimindDS.ColorToken.strokeSoft, lineWidth: 1)
+                )
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal, ArtimindDS.Size.sidePadding)
+            } else {
+                // Empty state — no photo permission
+                VStack(spacing: 14) {
+                    Image(systemName: "person.3.fill")
+                        .font(.system(size: 36))
+                        .foregroundStyle(ArtimindDS.ColorToken.textTertiary)
+
+                    Text("Allow photo access to find\nyour loved ones automatically")
+                        .font(AppFont.dmSans(.regular, size: 13))
+                        .foregroundStyle(ArtimindDS.ColorToken.textSecondary)
+                        .multilineTextAlignment(.center)
+
+                    Button { requestPhotoPermission() } label: {
+                        Text("Allow Access")
+                            .font(AppFont.dmSans(.bold, size: 14))
+                            .foregroundStyle(.black)
+                            .padding(.horizontal, 24)
+                            .frame(height: 40)
+                            .background(Capsule().fill(.white))
+                    }
+                    .buttonStyle(.plain)
+
+                    Button { showPeopleList = true } label: {
+                        Text("Add manually instead")
+                            .font(AppFont.dmSans(.medium, size: 13))
+                            .foregroundStyle(ArtimindDS.ColorToken.blue)
                     }
                     .buttonStyle(.plain)
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 24)
+                .padding(.horizontal, ArtimindDS.Size.sidePadding)
             }
-            .padding(.horizontal, ArtimindDS.Size.sidePadding)
+        }
+        .onAppear { checkPhotoPermission() }
+    }
+
+    private func checkPhotoPermission() {
+        let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        permissionChecked = true
+        hasPhotoPermission = (status == .authorized || status == .limited)
+    }
+
+    private func requestPhotoPermission() {
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
+            DispatchQueue.main.async {
+                hasPhotoPermission = (status == .authorized || status == .limited)
+            }
         }
     }
 }
@@ -426,8 +489,13 @@ private struct PersonCard: View {
                 )
 
             if person.isUnnamed {
-                Text(" ")
-                    .font(AppFont.dmSans(.regular, size: 13))
+                HStack(spacing: 4) {
+                    Image(systemName: "pencil")
+                        .font(.system(size: 10, weight: .medium))
+                    Text("Name")
+                        .font(AppFont.dmSans(.regular, size: 12))
+                }
+                .foregroundStyle(ArtimindDS.ColorToken.textTertiary)
             } else {
                 Text(person.name)
                     .font(AppFont.dmSans(.semibold, size: 13))
