@@ -1,277 +1,442 @@
-<mxfile host="app.diagrams.net" modified="2026-06-05T10:00:00.000Z" agent="Claude" version="21.0.0">
-  <diagram id="memoir-flow" name="Memoir User Flow">
-    <mxGraphModel dx="1800" dy="2400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="2800" math="0" shadow="0">
+<mxfile host="app.diagrams.net" modified="2026-06-05T10:30:00.000Z" agent="Claude" version="21.0.0">
+  <diagram id="memoir-flow" name="MEMOIR — USER FLOW">
+    <mxGraphModel dx="2400" dy="3600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="3400" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
 
         <!-- ==================== TITLE ==================== -->
-        <mxCell id="title" value="Artimind Memoir — User Flow v5.9.0" style="text;html=1;fontSize=24;fontStyle=1;align=center;fontFamily=Helvetica;fontColor=#FFFFFF;fillColor=#1a1a2e;rounded=1;strokeColor=none;spacingTop=10;spacingBottom=10;" vertex="1" parent="1">
-          <mxGeometry x="400" y="20" width="800" height="50" as="geometry"/>
+        <mxCell id="title" value="MEMOIR — USER FLOW" style="text;html=1;fontSize=20;fontStyle=1;align=center;fontColor=#E67E22;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="900" y="20" width="400" height="30" as="geometry"/>
         </mxCell>
 
-        <!-- ==================== ENTRY POINT ==================== -->
-        <mxCell id="entry" value="Memoir Tab" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2D3436;strokeColor=#636e72;fontColor=#FFFFFF;fontSize=14;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="700" y="100" width="200" height="60" as="geometry"/>
+        <!-- ==================== START ==================== -->
+        <mxCell id="start" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#27AE60;strokeColor=#27AE60;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="190" width="70" height="40" as="geometry"/>
         </mxCell>
 
         <!-- ==================== MEMOIR MAIN ==================== -->
-        <mxCell id="memoir_main" value="Memoir Main Screen&#xa;• Hero video banner&#xa;• Explore Memory Restoration (grid 2x2)&#xa;• Choose Loved Ones section" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#30363D;fontColor=#C9D1D9;fontSize=12;align=left;spacingLeft=10;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="620" y="200" width="360" height="90" as="geometry"/>
+        <mxCell id="memoir" value="Memoir Tab&#xa;(Main Screen)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="180" width="160" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;fontColor=#C9D1D9;" edge="1" source="entry" target="memoir_main" parent="1"/>
+        <mxCell id="e_start" value="Tap Memoir tab" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="start" target="memoir" parent="1"/>
 
-        <!-- ==================== 4 FEATURE BRANCHES ==================== -->
-
-        <!-- BRANCH LABELS -->
-        <mxCell id="label_restore" value="🖼️ Photo Restore" style="text;html=1;fontSize=13;fontStyle=1;align=center;fontColor=#4ECDC4;" vertex="1" parent="1">
-          <mxGeometry x="60" y="330" width="160" height="30" as="geometry"/>
-        </mxCell>
-        <mxCell id="label_colorize" value="🎨 Colorize" style="text;html=1;fontSize=13;fontStyle=1;align=center;fontColor=#A78BFA;" vertex="1" parent="1">
-          <mxGeometry x="340" y="330" width="160" height="30" as="geometry"/>
-        </mxCell>
-        <mxCell id="label_textedit" value="✏️ Text Edit" style="text;html=1;fontSize=13;fontStyle=1;align=center;fontColor=#FFD93D;" vertex="1" parent="1">
-          <mxGeometry x="900" y="330" width="160" height="30" as="geometry"/>
-        </mxCell>
-        <mxCell id="label_voice" value="🎙️ Voice Tribute" style="text;html=1;fontSize=13;fontStyle=1;align=center;fontColor=#F472B6;" vertex="1" parent="1">
-          <mxGeometry x="1200" y="330" width="180" height="30" as="geometry"/>
+        <!-- ==================== SECTION A: PHOTO RESTORE ==================== -->
+        <mxCell id="sec_a" value="A  Photo Restore Flow" style="text;html=1;fontSize=14;fontStyle=5;fontColor=#4ECDC4;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="250" height="25" as="geometry"/>
         </mxCell>
 
-        <!-- ========== PHOTO RESTORE FLOW ========== -->
-        <mxCell id="pr_picker" value="PhotosPicker&#xa;(select 1 image)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#4ECDC4;fontColor=#C9D1D9;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="50" y="380" width="180" height="50" as="geometry"/>
+        <mxCell id="pr_picker" value="System Library&#xa;(Photo Picker)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5F5E3;strokeColor=#27AE60;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="310" width="150" height="50" as="geometry"/>
         </mxCell>
-        <mxCell id="e_pr1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#4ECDC4;" edge="1" source="memoir_main" target="pr_picker" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e_a1" value="Tap Photo Restore" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="memoir" target="pr_picker" parent="1"/>
+
+        <mxCell id="pr_has_image" value="Image&#xa;selected?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="410" width="110" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_a2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;" edge="1" source="pr_picker" target="pr_has_image" parent="1"/>
+
+        <mxCell id="pr_loading" value="Loading Screen&#xa;(Recovering photo)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_a3" value="Yes" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#27AE60;" edge="1" source="pr_has_image" target="pr_loading" parent="1"/>
+
+        <mxCell id="pr_cancel_end" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="250" y="430" width="30" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_a_cancel" value="Cancel" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#999999;fontSize=9;fontColor=#E74C3C;dashed=1;" edge="1" source="pr_has_image" target="pr_cancel_end" parent="1"/>
+
+        <mxCell id="pr_result" value="Result Screen&#xa;(Restored photo)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="640" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_a4" value="3.5s" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="pr_loading" target="pr_result" parent="1"/>
+
+        <mxCell id="pr_compare" value="Hold to&#xa;Compare" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF5FB;strokeColor=#3498DB;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="580" width="90" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_a_compare" value="hold photo" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#999999;fontSize=9;fontColor=#333333;dashed=1;" edge="1" source="pr_result" target="pr_compare" parent="1"/>
+
+        <mxCell id="pr_share" value="Share Sheet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5F5E3;strokeColor=#27AE60;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="645" width="90" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_a_share" value="Tap Share" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="pr_result" target="pr_share" parent="1"/>
+
+        <mxCell id="pr_back" value="Tap Back → Memoir Tab" style="text;html=1;fontSize=9;fontColor=#999999;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="700" width="160" height="20" as="geometry"/>
         </mxCell>
 
-        <mxCell id="pr_loading" value="Loading Screen&#xa;• User photo bg (grayscale)&#xa;• Spinner + &quot;Recovering...&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#4ECDC4;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
-          <mxGeometry x="30" y="480" width="220" height="60" as="geometry"/>
+        <!-- ==================== SECTION B: COLORIZE ==================== -->
+        <mxCell id="sec_b" value="B  Colorize Flow" style="text;html=1;fontSize=14;fontStyle=5;fontColor=#A78BFA;align=left;" vertex="1" parent="1">
+          <mxGeometry x="420" y="60" width="200" height="25" as="geometry"/>
         </mxCell>
-        <mxCell id="e_pr2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#4ECDC4;" edge="1" source="pr_picker" target="pr_loading" parent="1"/>
 
-        <mxCell id="pr_cancel" value="Cancel /&#xa;No image" style="rhombus;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#636e72;fontColor=#ff6b6b;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="-100" y="385" width="100" height="60" as="geometry"/>
+        <mxCell id="cl_picker" value="System Library&#xa;(Photo Picker)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5F5E3;strokeColor=#27AE60;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="420" y="310" width="150" height="50" as="geometry"/>
         </mxCell>
-        <mxCell id="e_pr_cancel" value="cancel" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#ff6b6b;fontColor=#ff6b6b;fontSize=9;dashed=1;" edge="1" source="pr_picker" target="pr_cancel" parent="1"/>
+        <mxCell id="e_b1" value="Tap Colorize" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="memoir" target="cl_picker" parent="1"/>
 
-        <mxCell id="pr_result" value="Result Screen&#xa;• Restored photo&#xa;• Hold to compare&#xa;• Share / Create Video" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#4ECDC4;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
-          <mxGeometry x="30" y="590" width="220" height="70" as="geometry"/>
+        <mxCell id="cl_loading" value="Loading Screen&#xa;(Colorizing photo)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="420" y="430" width="160" height="50" as="geometry"/>
         </mxCell>
-        <mxCell id="e_pr3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#4ECDC4;" edge="1" source="pr_loading" target="pr_result" parent="1"/>
+        <mxCell id="e_b2" value="select image" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="cl_picker" target="cl_loading" parent="1"/>
 
-        <mxCell id="pr_share" value="Share Sheet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="-80" y="600" width="90" height="40" as="geometry"/>
+        <mxCell id="cl_result" value="Result Screen&#xa;(Colorized photo)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="420" y="540" width="160" height="50" as="geometry"/>
         </mxCell>
-        <mxCell id="e_pr_share" value="share" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=9;" edge="1" source="pr_result" target="pr_share" parent="1"/>
+        <mxCell id="e_b3" value="3.5s" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="cl_loading" target="cl_result" parent="1"/>
 
-        <mxCell id="pr_back" value="back" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=9;dashed=1;" edge="1" source="pr_result" target="memoir_main" parent="1">
+        <mxCell id="cl_actions" value="Share / Create Video&#xa;Hold to Compare" style="text;html=1;fontSize=9;fontColor=#999999;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="420" y="600" width="160" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION C: TEXT EDIT ==================== -->
+        <mxCell id="sec_c" value="C  Text Edit Flow" style="text;html=1;fontSize=14;fontStyle=5;fontColor=#F39C12;align=left;" vertex="1" parent="1">
+          <mxGeometry x="700" y="60" width="200" height="25" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="te_picker" value="System Library&#xa;(Photo Picker)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5F5E3;strokeColor=#27AE60;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="700" y="310" width="150" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_c1" value="Tap Text Edit" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="memoir" target="te_picker" parent="1"/>
+
+        <mxCell id="te_editor" value="Text Edit Photo&#xa;(Full screen + prompt)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="700" y="420" width="170" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_c2" value="select image" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="te_picker" target="te_editor" parent="1"/>
+
+        <mxCell id="te_suggestions" value="Suggestion chips&#xa;(always visible)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF5FB;strokeColor=#3498DB;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="920" y="420" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_c_sug" value="tap chip" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#999999;fontSize=9;fontColor=#333333;dashed=1;" edge="1" source="te_suggestions" target="te_editor" parent="1"/>
+
+        <mxCell id="te_prompt_check" value="Prompt&#xa;entered?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="520" width="110" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_c3" value="Tap send" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="te_editor" target="te_prompt_check" parent="1"/>
+
+        <mxCell id="te_empty" value="Button disabled&#xa;(empty prompt)" style="text;html=1;fontSize=9;fontColor=#E74C3C;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="880" y="540" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_c_empty" value="No" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#999999;fontSize=9;fontColor=#E74C3C;dashed=1;" edge="1" source="te_prompt_check" target="te_empty" parent="1"/>
+
+        <mxCell id="te_processing" value="Processing&#xa;(2.5s fake filter)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="710" y="640" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_c4" value="Yes" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#27AE60;" edge="1" source="te_prompt_check" target="te_processing" parent="1"/>
+
+        <mxCell id="te_result" value="Text Edit Result&#xa;(Edited photo)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="710" y="740" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_c5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;" edge="1" source="te_processing" target="te_result" parent="1"/>
+
+        <mxCell id="te_edit_check" value="Edits&#xa;&lt; 3?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="730" y="840" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_c6" value="Tap Edit again" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="te_result" target="te_edit_check" parent="1"/>
+
+        <mxCell id="e_c_loop" value="Yes → re-edit" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F39C12;fontSize=9;fontColor=#F39C12;dashed=1;" edge="1" source="te_edit_check" target="te_editor" parent="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="140" y="700"/>
-              <mxPoint x="500" y="700"/>
-              <mxPoint x="500" y="245"/>
+              <mxPoint x="660" y="870"/>
+              <mxPoint x="660" y="445"/>
             </Array>
           </mxGeometry>
         </mxCell>
 
-        <!-- ========== COLORIZE FLOW ========== -->
-        <mxCell id="cl_picker" value="PhotosPicker&#xa;(select 1 image)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#A78BFA;fontColor=#C9D1D9;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="330" y="380" width="180" height="50" as="geometry"/>
+        <mxCell id="te_maxed" value="Max edits (3/3)&#xa;→ Start Over" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FADBD8;strokeColor=#E74C3C;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="880" y="845" width="120" height="45" as="geometry"/>
         </mxCell>
-        <mxCell id="e_cl1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#A78BFA;" edge="1" source="memoir_main" target="cl_picker" parent="1"/>
+        <mxCell id="e_c_max" value="No (3/3)" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#E74C3C;fontSize=9;fontColor=#E74C3C;dashed=1;" edge="1" source="te_edit_check" target="te_maxed" parent="1"/>
 
-        <mxCell id="cl_loading" value="Loading Screen&#xa;• User photo bg (grayscale)&#xa;• Spinner + &quot;Colorizing...&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#A78BFA;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
-          <mxGeometry x="310" y="480" width="220" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_cl2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#A78BFA;" edge="1" source="cl_picker" target="cl_loading" parent="1"/>
-
-        <mxCell id="cl_result" value="Result Screen&#xa;• Colorized photo&#xa;• Hold to compare&#xa;• Share / Create Video" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#A78BFA;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
-          <mxGeometry x="310" y="590" width="220" height="70" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_cl3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#A78BFA;" edge="1" source="cl_loading" target="cl_result" parent="1"/>
-
-        <!-- ========== TEXT EDIT FLOW ========== -->
-        <mxCell id="te_picker" value="PhotosPicker&#xa;(select 1 image)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#FFD93D;fontColor=#C9D1D9;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="890" y="380" width="180" height="50" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_te1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFD93D;" edge="1" source="memoir_main" target="te_picker" parent="1"/>
-
-        <mxCell id="te_editor" value="Text Edit Photo&#xa;• Full screen photo&#xa;• Prompt input bar&#xa;• 3 suggestion chips&#xa;• Gradient border" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#FFD93D;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
-          <mxGeometry x="870" y="480" width="220" height="80" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_te2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFD93D;" edge="1" source="te_picker" target="te_editor" parent="1"/>
-
-        <mxCell id="te_processing" value="Processing&#xa;(2.5s fake filter)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#FFD93D;fontColor=#C9D1D9;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="890" y="610" width="180" height="45" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_te3" value="send prompt" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFD93D;fontColor=#C9D1D9;fontSize=9;" edge="1" source="te_editor" target="te_processing" parent="1"/>
-
-        <mxCell id="te_result" value="Text Edit Result&#xa;• Edited photo&#xa;• Hold to compare&#xa;• Edit again (max 3x)&#xa;• Share / Create Video" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#FFD93D;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
-          <mxGeometry x="860" y="700" width="240" height="80" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_te4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFD93D;" edge="1" source="te_processing" target="te_result" parent="1"/>
-
-        <mxCell id="te_loop" value="edit again&#xa;(max 3x)" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFD93D;fontColor=#FFD93D;fontSize=9;dashed=1;" edge="1" source="te_result" target="te_editor" parent="1">
+        <mxCell id="e_c_startover" value="start over&#xa;(original)" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#999999;fontSize=9;fontColor=#999999;dashed=1;" edge="1" source="te_maxed" target="te_editor" parent="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1150" y="740"/>
-              <mxPoint x="1150" y="520"/>
+              <mxPoint x="1040" y="867"/>
+              <mxPoint x="1040" y="445"/>
             </Array>
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="te_maxed" value="Max edits&#xa;reached" style="rhombus;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#ff6b6b;fontColor=#ff6b6b;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="860" y="830" width="110" height="60" as="geometry"/>
+        <!-- ==================== SECTION D: VOICE TRIBUTE ==================== -->
+        <mxCell id="sec_d" value="D  Voice Tribute Flow" style="text;html=1;fontSize=14;fontStyle=5;fontColor=#E91E8B;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="60" width="250" height="25" as="geometry"/>
         </mxCell>
-        <mxCell id="e_te_max" value="3/3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#ff6b6b;fontColor=#ff6b6b;fontSize=9;dashed=1;" edge="1" source="te_result" target="te_maxed" parent="1"/>
 
-        <mxCell id="te_startover" value="Start Over&#xa;(original image)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="835" width="120" height="50" as="geometry"/>
+        <!-- Step 1: Choose Photo -->
+        <mxCell id="vt_photo" value="Choose Photo&#xa;(1 portrait)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="180" width="160" height="50" as="geometry"/>
         </mxCell>
-        <mxCell id="e_te_so" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" edge="1" source="te_maxed" target="te_startover" parent="1"/>
-
-        <!-- ========== VOICE TRIBUTE FLOW ========== -->
-        <mxCell id="vt_photo" value="Choose Photo&#xa;• 1 portrait photo&#xa;• Library / Camera&#xa;• Face detection (warning)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#F472B6;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
-          <mxGeometry x="1180" y="380" width="220" height="70" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_vt1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F472B6;" edge="1" source="memoir_main" target="vt_photo" parent="1"/>
-
-        <!-- Face detection decision -->
-        <mxCell id="vt_face_check" value="Face&#xa;detected?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#F472B6;fontColor=#C9D1D9;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="1240" y="490" width="100" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_vt_fc" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F472B6;" edge="1" source="vt_photo" target="vt_face_check" parent="1"/>
-
-        <mxCell id="vt_warning" value="⚠️ Warning shown&#xa;(non-blocking)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2d2410;strokeColor=#FFD93D;fontColor=#FFD93D;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="1400" y="495" width="140" height="45" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_vt_warn" value="no / small / multi" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFD93D;fontColor=#FFD93D;fontSize=9;" edge="1" source="vt_face_check" target="vt_warning" parent="1"/>
-
-        <mxCell id="vt_audio" value="Add Voice&#xa;Toggle: Upload Audio │ Voice Sample&#xa;&#xa;Upload: Library / Extract from Video&#xa;Sample: Voice gallery (relationship chips)&#xa;Record: Waveform + timer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#F472B6;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="1150" y="600" width="280" height="100" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_vt2" value="yes / continue anyway" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F472B6;fontColor=#C9D1D9;fontSize=9;" edge="1" source="vt_face_check" target="vt_audio" parent="1"/>
-        <mxCell id="e_vt_warn2" value="continue" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFD93D;fontColor=#C9D1D9;fontSize=9;dashed=1;" edge="1" source="vt_warning" target="vt_audio" parent="1">
+        <mxCell id="e_d1" value="Tap Voice Tribute" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="memoir" target="vt_photo" parent="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1470" y="600"/>
-              <mxPoint x="1470" y="650"/>
+              <mxPoint x="260" y="160"/>
+              <mxPoint x="1280" y="160"/>
             </Array>
           </mxGeometry>
         </mxCell>
 
-        <!-- Voice source decision -->
-        <mxCell id="vt_has_voice" value="Voice&#xa;source?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#F472B6;fontColor=#C9D1D9;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="1240" y="740" width="100" height="60" as="geometry"/>
+        <mxCell id="vt_source" value="Photo&#xa;source?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="280" width="100" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="e_vt3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F472B6;" edge="1" source="vt_audio" target="vt_has_voice" parent="1"/>
+        <mxCell id="e_d2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;" edge="1" source="vt_photo" target="vt_source" parent="1"/>
 
-        <mxCell id="vt_no_voice" value="No voice yet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#636e72;fontColor=#ff6b6b;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="1400" y="750" width="100" height="40" as="geometry"/>
+        <mxCell id="vt_library" value="System Library&#xa;(Photo Picker)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5F5E3;strokeColor=#27AE60;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="390" width="120" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="e_vt_nv" value="none" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#ff6b6b;fontColor=#ff6b6b;fontSize=9;dashed=1;" edge="1" source="vt_has_voice" target="vt_no_voice" parent="1"/>
+        <mxCell id="e_d_lib" value="Library" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="vt_source" target="vt_library" parent="1"/>
 
-        <mxCell id="vt_script" value="Write Script&#xa;• &quot;What would they say to you?&quot;&#xa;• Who is speaking (name)&#xa;• Script editor (default/custom)&#xa;• Prompt picker (✨ sparkle icon)&#xa;• Word count (max 50)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#F472B6;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="1150" y="850" width="280" height="100" as="geometry"/>
+        <mxCell id="vt_camera" value="Camera" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5F5E3;strokeColor=#27AE60;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="390" width="100" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="e_vt4" value="has voice" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F472B6;fontColor=#C9D1D9;fontSize=9;" edge="1" source="vt_has_voice" target="vt_script" parent="1"/>
+        <mxCell id="e_d_cam" value="Camera" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="vt_source" target="vt_camera" parent="1"/>
 
-        <mxCell id="vt_too_long" value="⚠️ &gt;50 words&#xa;warning" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2d1010;strokeColor=#ff6b6b;fontColor=#ff6b6b;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="1480" y="870" width="110" height="40" as="geometry"/>
+        <!-- Face Detection -->
+        <mxCell id="vt_face" value="Face&#xa;detected?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="480" width="100" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="e_vt_long" value="&gt;50 words" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#ff6b6b;fontColor=#ff6b6b;fontSize=9;dashed=1;" edge="1" source="vt_script" target="vt_too_long" parent="1"/>
+        <mxCell id="e_d_face1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;" edge="1" source="vt_library" target="vt_face" parent="1"/>
+        <mxCell id="e_d_face2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;" edge="1" source="vt_camera" target="vt_face" parent="1"/>
 
-        <mxCell id="vt_processing" value="Processing&#xa;• Avatar halo ring&#xa;• 4 steps progress&#xa;• &quot;Bringing them back&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#F472B6;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
-          <mxGeometry x="1170" y="1000" width="240" height="70" as="geometry"/>
+        <mxCell id="vt_warn_noface" value="⚠ No face detected" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9E7;strokeColor=#F39C12;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="480" width="140" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="e_vt5" value="continue" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F472B6;fontColor=#C9D1D9;fontSize=9;" edge="1" source="vt_script" target="vt_processing" parent="1"/>
+        <mxCell id="e_d_warn1" value="No" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F39C12;fontSize=9;fontColor=#E74C3C;dashed=1;" edge="1" source="vt_face" target="vt_warn_noface" parent="1"/>
 
-        <mxCell id="vt_result" value="Result&#xa;• Video preview + play&#xa;• Heart / Download&#xa;• Share button&#xa;• &quot;A Moment Together&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#F472B6;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
-          <mxGeometry x="1170" y="1120" width="240" height="80" as="geometry"/>
-        </mxCell>
-        <mxCell id="e_vt6" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F472B6;" edge="1" source="vt_processing" target="vt_result" parent="1"/>
-
-        <!-- ========== PEOPLE / TIMELINE FLOW ========== -->
-        <mxCell id="label_people" value="👤 People Flow" style="text;html=1;fontSize=13;fontStyle=1;align=center;fontColor=#636e72;" vertex="1" parent="1">
-          <mxGeometry x="580" y="330" width="160" height="30" as="geometry"/>
+        <mxCell id="vt_warn_multi" value="⚠ Multiple faces" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9E7;strokeColor=#F39C12;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="520" width="140" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="people_grid" value="People Grid&#xa;(2 col circles)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="590" y="380" width="160" height="50" as="geometry"/>
+        <mxCell id="vt_warn_small" value="⚠ Face too small" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9E7;strokeColor=#F39C12;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="560" width="140" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="e_p1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" edge="1" source="memoir_main" target="people_grid" parent="1"/>
 
-        <mxCell id="person_timeline" value="Person Timeline&#xa;• Hero slideshow&#xa;• Name this person&#xa;• Month-grouped posts&#xa;• +N badge for extra photos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="560" y="480" width="220" height="90" as="geometry"/>
+        <mxCell id="vt_warn_note" value="(all warnings non-blocking&#xa;→ can still Continue)" style="text;html=1;fontSize=9;fontColor=#F39C12;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="595" width="160" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="e_p2" value="tap person" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=9;" edge="1" source="people_grid" target="person_timeline" parent="1"/>
 
-        <mxCell id="photo_detail" value="Photo Detail&#xa;• Full screen photo&#xa;• AI Tools grid (2x2)&#xa;• NavigationStack internal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=11;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="560" y="620" width="220" height="70" as="geometry"/>
+        <!-- Step 2: Add Voice -->
+        <mxCell id="vt_voice" value="Add Voice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="600" width="160" height="50" as="geometry"/>
         </mxCell>
-        <mxCell id="e_p3" value="tap photo" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=9;" edge="1" source="person_timeline" target="photo_detail" parent="1"/>
+        <mxCell id="e_d3" value="Yes / Continue anyway" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#27AE60;" edge="1" source="vt_face" target="vt_voice" parent="1"/>
 
-        <mxCell id="photo_grid" value="Photo Grid&#xa;(all photos in post)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="560" y="740" width="220" height="45" as="geometry"/>
+        <mxCell id="vt_voice_mode" value="Voice&#xa;mode?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="700" width="100" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="e_p4" value="tap +N" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;fontColor=#C9D1D9;fontSize=9;" edge="1" source="person_timeline" target="photo_grid" parent="1">
+        <mxCell id="e_d4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;" edge="1" source="vt_voice" target="vt_voice_mode" parent="1"/>
+
+        <!-- Upload Audio branch -->
+        <mxCell id="vt_upload_audio" value="Upload Audio&#xa;(WAV, MP3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5F5E3;strokeColor=#27AE60;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="810" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d_ua" value="Upload Audio" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="vt_voice_mode" target="vt_upload_audio" parent="1"/>
+
+        <mxCell id="vt_extract" value="Extract from&#xa;Video (MP4, MOV)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5F5E3;strokeColor=#27AE60;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="870" width="130" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Voice Sample branch -->
+        <mxCell id="vt_sample" value="Voice Sample&#xa;Gallery" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="810" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d_vs" value="Voice Sample" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="vt_voice_mode" target="vt_sample" parent="1"/>
+
+        <!-- Record branch -->
+        <mxCell id="vt_record" value="Start Recording&#xa;(waveform + timer)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="910" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d_rec" value="Start Recording" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="vt_voice_mode" target="vt_record" parent="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="830" y="550"/>
-              <mxPoint x="830" y="762"/>
+              <mxPoint x="1280" y="790"/>
+              <mxPoint x="1280" y="790"/>
             </Array>
           </mxGeometry>
         </mxCell>
 
-        <!-- Photo Detail to tools -->
-        <mxCell id="e_pd_restore" value="Photo Restore" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#4ECDC4;fontColor=#4ECDC4;fontSize=9;dashed=1;" edge="1" source="photo_detail" target="pr_loading" parent="1">
+        <mxCell id="vt_mic_perm" value="Mic&#xa;permission?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="1010" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d_mic" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;" edge="1" source="vt_record" target="vt_mic_perm" parent="1"/>
+
+        <mxCell id="vt_mic_popup" value="Mic Permission&#xa;Pop-up" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5F5E3;strokeColor=#27AE60;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="1000" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d_mic_popup" value="first time" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#999999;fontSize=9;fontColor=#333333;dashed=1;" edge="1" source="vt_mic_perm" target="vt_mic_popup" parent="1"/>
+
+        <mxCell id="vt_mic_denied" value="Mic denied&#xa;→ Open Settings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FADBD8;strokeColor=#E74C3C;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="1060" width="130" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d_mic_deny" value="denied" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#E74C3C;fontSize=9;fontColor=#E74C3C;dashed=1;" edge="1" source="vt_mic_perm" target="vt_mic_denied" parent="1"/>
+
+        <mxCell id="vt_rec_stop" value="Discard / Save" style="text;html=1;fontSize=9;fontColor=#999999;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1080" width="120" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Voice ready merge -->
+        <mxCell id="vt_voice_ready" value="Voice&#xa;ready?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="1130" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="vt_no_voice" value="Continue disabled&#xa;(no voice)" style="text;html=1;fontSize=9;fontColor=#E74C3C;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="1145" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d_nv" value="No" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#E74C3C;fontSize=9;fontColor=#E74C3C;dashed=1;" edge="1" source="vt_voice_ready" target="vt_no_voice" parent="1"/>
+
+        <!-- Step 3: Write Script -->
+        <mxCell id="vt_script" value="Write Script" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1240" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d5" value="Yes → Continue" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#27AE60;" edge="1" source="vt_voice_ready" target="vt_script" parent="1"/>
+
+        <mxCell id="vt_prompt_picker" value="✨ Prompt Picker&#xa;(7 templates)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF5FB;strokeColor=#3498DB;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1410" y="1245" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d_prompt" value="tap ✨" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#999999;fontSize=9;fontColor=#333333;dashed=1;" edge="1" source="vt_script" target="vt_prompt_picker" parent="1"/>
+
+        <mxCell id="vt_word_check" value="Words&#xa;≤ 50?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="1340" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d6" value="Tap Continue" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="vt_script" target="vt_word_check" parent="1"/>
+
+        <mxCell id="vt_too_long" value="⚠ Message too long&#xa;(warning shown)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9E7;strokeColor=#F39C12;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="1345" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d_long" value="No (&gt;50)" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F39C12;fontSize=9;fontColor=#E74C3C;dashed=1;" edge="1" source="vt_word_check" target="vt_too_long" parent="1"/>
+
+        <!-- Step 4: Processing -->
+        <mxCell id="vt_processing" value="Processing&#xa;(Bringing Them Back)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="1450" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d7" value="Yes (≤50)" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#27AE60;" edge="1" source="vt_word_check" target="vt_processing" parent="1"/>
+
+        <mxCell id="vt_steps" value="4 steps:&#xa;① Remembering face&#xa;② Listening to voice&#xa;③ Bringing words to life&#xa;④ They're almost here" style="text;html=1;fontSize=9;fontColor=#999999;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="1440" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Step 5: Result -->
+        <mxCell id="vt_result" value="Result&#xa;(A Moment Together)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1560" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_d8" value="5.5s" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="vt_processing" target="vt_result" parent="1"/>
+
+        <mxCell id="vt_result_actions" value="♡ Heart / ⬇ Download / Share" style="text;html=1;fontSize=9;fontColor=#999999;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1620" width="200" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION E: PEOPLE FLOW ==================== -->
+        <mxCell id="sec_e" value="E  People / Timeline Flow" style="text;html=1;fontSize=14;fontStyle=5;fontColor=#636e72;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="780" width="250" height="25" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pe_grid" value="People Grid&#xa;(circle avatars)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="830" width="150" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_e1" value="Tap People >" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="memoir" target="pe_grid" parent="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="450" y="655"/>
-              <mxPoint x="450" y="510"/>
+              <mxPoint x="260" y="260"/>
+              <mxPoint x="380" y="260"/>
+              <mxPoint x="380" y="790"/>
+              <mxPoint x="115" y="790"/>
             </Array>
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="e_pd_text" value="Text Edit" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#FFD93D;fontColor=#FFD93D;fontSize=9;dashed=1;" edge="1" source="photo_detail" target="te_editor" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="pe_timeline" value="Person Timeline&#xa;(month-grouped)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="260" y="830" width="150" height="50" as="geometry"/>
         </mxCell>
+        <mxCell id="e_e2" value="Tap person" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="pe_grid" target="pe_timeline" parent="1"/>
 
-        <mxCell id="e_pd_voice" value="Voice Tribute" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#F472B6;fontColor=#F472B6;fontSize=9;dashed=1;" edge="1" source="photo_detail" target="vt_photo" parent="1">
+        <mxCell id="pe_name" value="Name this person&#xa;(inline edit)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF5FB;strokeColor=#3498DB;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="920" width="130" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_e_name" value="tap name" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#999999;fontSize=9;fontColor=#333333;dashed=1;" edge="1" source="pe_timeline" target="pe_name" parent="1"/>
+
+        <mxCell id="pe_photo_detail" value="Photo Detail&#xa;(fullScreenCover)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="480" y="830" width="150" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_e3" value="Tap photo" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="pe_timeline" target="pe_photo_detail" parent="1"/>
+
+        <mxCell id="pe_photo_grid" value="Photo Grid&#xa;(all photos)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="920" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_e4" value="Tap +N" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#999999;fontSize=9;fontColor=#333333;dashed=1;" edge="1" source="pe_timeline" target="pe_photo_grid" parent="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="850" y="655"/>
-              <mxPoint x="850" y="360"/>
-              <mxPoint x="1290" y="360"/>
+              <mxPoint x="440" y="855"/>
+              <mxPoint x="440" y="940"/>
             </Array>
           </mxGeometry>
         </mxCell>
 
-        <!-- ========== LEGEND ========== -->
-        <mxCell id="legend_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D1117;strokeColor=#30363D;" vertex="1" parent="1">
-          <mxGeometry x="30" y="900" width="350" height="200" as="geometry"/>
+        <mxCell id="pe_tools" value="AI Tools Grid (2x2)&#xa;→ Restore / Colorize / Text Edit / Voice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF5FB;strokeColor=#3498DB;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="830" width="220" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="legend_title" value="Legend" style="text;html=1;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="50" y="910" width="80" height="25" as="geometry"/>
+        <mxCell id="e_e5" value="tap tool" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;fontSize=9;fontColor=#333333;" edge="1" source="pe_photo_detail" target="pe_tools" parent="1"/>
+
+        <mxCell id="pe_tools_note" value="NavigationStack internal&#xa;→ back returns to Photo Detail" style="text;html=1;fontSize=9;fontColor=#999999;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="680" y="875" width="220" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="leg1" value="— Happy path (solid line)" style="text;html=1;fontSize=11;fontColor=#C9D1D9;" vertex="1" parent="1">
-          <mxGeometry x="50" y="940" width="200" height="20" as="geometry"/>
+
+        <!-- ==================== LEGEND ==================== -->
+        <mxCell id="leg_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8F9FA;strokeColor=#DEE2E6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1010" width="560" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="leg2" value="--- Unhappy / edge case (dashed)" style="text;html=1;fontSize=11;fontColor=#ff6b6b;" vertex="1" parent="1">
-          <mxGeometry x="50" y="965" width="250" height="20" as="geometry"/>
+        <mxCell id="leg_title" value="Legend" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1015" width="60" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="leg3" value="◆ Decision point (diamond)" style="text;html=1;fontSize=11;fontColor=#C9D1D9;" vertex="1" parent="1">
-          <mxGeometry x="50" y="990" width="200" height="20" as="geometry"/>
+
+        <mxCell id="leg_screen" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDEBD0;strokeColor=#E67E22;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1045" width="20" height="15" as="geometry"/>
         </mxCell>
-        <mxCell id="leg4" value="🟢 Photo Restore  🟣 Colorize" style="text;html=1;fontSize=11;fontColor=#C9D1D9;" vertex="1" parent="1">
-          <mxGeometry x="50" y="1015" width="280" height="20" as="geometry"/>
+        <mxCell id="leg_screen_t" value="Screen / Activity" style="text;html=1;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="85" y="1043" width="100" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="leg5" value="🟡 Text Edit  🩷 Voice Tribute" style="text;html=1;fontSize=11;fontColor=#C9D1D9;" vertex="1" parent="1">
-          <mxGeometry x="50" y="1040" width="280" height="20" as="geometry"/>
+
+        <mxCell id="leg_system" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5F5E3;strokeColor=#27AE60;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1070" width="20" height="15" as="geometry"/>
         </mxCell>
-        <mxCell id="leg6" value="⬜ People / Navigation flow" style="text;html=1;fontSize=11;fontColor=#636e72;" vertex="1" parent="1">
-          <mxGeometry x="50" y="1065" width="280" height="20" as="geometry"/>
+        <mxCell id="leg_system_t" value="System response / Popup" style="text;html=1;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="85" y="1068" width="150" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="leg_info" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF5FB;strokeColor=#3498DB;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1095" width="20" height="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_info_t" value="Info / Interaction" style="text;html=1;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="85" y="1093" width="110" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="leg_decision" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1042" width="20" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_decision_t" value="Decision point" style="text;html=1;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="275" y="1043" width="100" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="leg_warn" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9E7;strokeColor=#F39C12;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1070" width="20" height="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_warn_t" value="Warning (non-blocking)" style="text;html=1;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="275" y="1068" width="140" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="leg_error" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FADBD8;strokeColor=#E74C3C;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1095" width="20" height="15" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_error_t" value="Error / Blocking" style="text;html=1;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="275" y="1093" width="100" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="leg_solid" value="——→  Happy path" style="text;html=1;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1043" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_dashed" value="- - →  Edge / unhappy case" style="text;html=1;fontSize=10;fontColor=#E74C3C;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1068" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg_end" value="●  End node" style="text;html=1;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1093" width="80" height="20" as="geometry"/>
         </mxCell>
 
       </root>
