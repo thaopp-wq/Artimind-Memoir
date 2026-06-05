@@ -146,7 +146,7 @@ struct RestoreView: View {
             }
         }
         .navigationDestination(isPresented: $showVoiceTribute) {
-            VoiceTributeAudioView()
+            VoiceTributePhotoView()
         }
         .photosPicker(isPresented: $showTextEdit, selection: $textEditPickerItem, matching: .images)
         .onChange(of: textEditPickerItem) {

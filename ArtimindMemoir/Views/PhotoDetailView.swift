@@ -80,7 +80,7 @@ struct PhotoDetailView: View {
                 }
             }
             .navigationDestination(isPresented: $showVoiceTribute) {
-                VoiceTributeAudioView()
+                VoiceTributePhotoView()
             }
         }
     }
