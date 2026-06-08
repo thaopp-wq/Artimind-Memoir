@@ -73,13 +73,10 @@ struct RestoreView: View {
     @State private var showFaceEnhance = false
     @State private var showVideoRestore = false
     @State private var showTextEdit = false
-    @State private var textEditPickerItem: PhotosPickerItem?
     @State private var textEditImage: UIImage?
     @State private var navigateToTextEdit = false
-    @State private var restorePickerItem: PhotosPickerItem?
     @State private var restoreImage: UIImage?
     @State private var navigateToRestore = false
-    @State private var colorizePickerItem: PhotosPickerItem?
     @State private var colorizeImage: UIImage?
     @State private var navigateToColorize = false
 
@@ -112,17 +109,13 @@ struct RestoreView: View {
         .navigationDestination(item: $selectedPerson) { person in
             PersonTimelineView(person: person)
         }
-        .photosPicker(isPresented: $showPhotoRestore, selection: $restorePickerItem, matching: .images)
-        .onChange(of: restorePickerItem) {
-            guard let item = restorePickerItem else { return }
-            item.loadTransferable(type: Data.self) { result in
-                DispatchQueue.main.async {
-                    if case .success(let data) = result, let data, let img = UIImage(data: data) {
-                        restoreImage = img
-                        navigateToRestore = true
-                    }
-                    restorePickerItem = nil
-                }
+        .navigationDestination(isPresented: $showPhotoRestore) {
+            PhotoPickerView(
+                title: "Photo Restore",
+                subtitle: "Choose a photo to restore"
+            ) { img in
+                restoreImage = img
+                navigateToRestore = true
             }
         }
         .navigationDestination(isPresented: $navigateToRestore) {
@@ -130,17 +123,13 @@ struct RestoreView: View {
                 PhotoRestoreProcessingView(image: img)
             }
         }
-        .photosPicker(isPresented: $showColorize, selection: $colorizePickerItem, matching: .images)
-        .onChange(of: colorizePickerItem) {
-            guard let item = colorizePickerItem else { return }
-            item.loadTransferable(type: Data.self) { result in
-                DispatchQueue.main.async {
-                    if case .success(let data) = result, let data, let img = UIImage(data: data) {
-                        colorizeImage = img
-                        navigateToColorize = true
-                    }
-                    colorizePickerItem = nil
-                }
+        .navigationDestination(isPresented: $showColorize) {
+            PhotoPickerView(
+                title: "Colorize",
+                subtitle: "Choose a black-and-white photo to colorize"
+            ) { img in
+                colorizeImage = img
+                navigateToColorize = true
             }
         }
         .navigationDestination(isPresented: $navigateToColorize) {
@@ -151,17 +140,13 @@ struct RestoreView: View {
         .navigationDestination(isPresented: $showVoiceTribute) {
             VoiceTributePhotoView()
         }
-        .photosPicker(isPresented: $showTextEdit, selection: $textEditPickerItem, matching: .images)
-        .onChange(of: textEditPickerItem) {
-            guard let item = textEditPickerItem else { return }
-            item.loadTransferable(type: Data.self) { result in
-                DispatchQueue.main.async {
-                    if case .success(let data) = result, let data, let img = UIImage(data: data) {
-                        textEditImage = img
-                        navigateToTextEdit = true
-                    }
-                    textEditPickerItem = nil
-                }
+        .navigationDestination(isPresented: $showTextEdit) {
+            PhotoPickerView(
+                title: "Text Edit",
+                subtitle: "Choose a photo to edit with AI"
+            ) { img in
+                textEditImage = img
+                navigateToTextEdit = true
             }
         }
         .navigationDestination(isPresented: $navigateToTextEdit) {

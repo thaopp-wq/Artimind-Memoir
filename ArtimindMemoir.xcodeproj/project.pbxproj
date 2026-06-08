@@ -170,6 +170,8 @@
 		B10000D0 /* PhotoRestoreGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRestoreGuideView.swift; sourceTree = "<group>"; };
 		B10000D1 /* PhotoRestorePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRestorePreviewView.swift; sourceTree = "<group>"; };
 		B10000D2 /* PhotoRestoreProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRestoreProcessingView.swift; sourceTree = "<group>"; };
+		A10000DA /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000DA /* PhotoPickerView.swift */; };
+		B10000DA /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
 		B10000D3 /* PhotoRestoreResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRestoreResultView.swift; sourceTree = "<group>"; };
 		B10000D4 /* ColorizeGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorizeGuideView.swift; sourceTree = "<group>"; };
 		B10000D5 /* FaceEnhanceGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceEnhanceGuideView.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				B10000D0 /* PhotoRestoreGuideView.swift */,
 				B10000D1 /* PhotoRestorePreviewView.swift */,
 				B10000D2 /* PhotoRestoreProcessingView.swift */,
+				B10000DA /* PhotoPickerView.swift */,
 				B10000D3 /* PhotoRestoreResultView.swift */,
 				B10000D4 /* ColorizeGuideView.swift */,
 				B10000D5 /* FaceEnhanceGuideView.swift */,
@@ -577,6 +580,7 @@
 				A10000D0 /* PhotoRestoreGuideView.swift in Sources */,
 				A10000D1 /* PhotoRestorePreviewView.swift in Sources */,
 				A10000D2 /* PhotoRestoreProcessingView.swift in Sources */,
+				A10000DA /* PhotoPickerView.swift in Sources */,
 				A10000D3 /* PhotoRestoreResultView.swift in Sources */,
 				A10000D4 /* ColorizeGuideView.swift in Sources */,
 				A10000D5 /* FaceEnhanceGuideView.swift in Sources */,

@@ -12,6 +12,10 @@ struct TimelineMonth: Identifiable {
     let id = UUID()
     let name: String            // e.g. "May"
     let posts: [TimelinePost]
+
+    var totalPhotos: Int {
+        posts.reduce(0) { $0 + $1.images.count }
+    }
 }
 
 struct TimelinePost: Identifiable {
@@ -34,9 +38,11 @@ private func buildTimeline(for person: Person) -> [TimelineYear] {
     return [
         TimelineYear(year: 2026, months: [
             TimelineMonth(name: "May", posts: [
-                TimelinePost(date: "15 May", images: imgs([0, 1, 2, 3, 4, 5, 6])),  // +4
+                TimelinePost(date: "15 May", images: imgs([0, 1, 2, 3, 4, 5, 6])),
                 TimelinePost(date: "12 May", images: imgs([2, 5])),
-                TimelinePost(date: "3 May", images: imgs([1, 3, 7])),
+                TimelinePost(date: "8 May", images: imgs([7, 3, 1])),
+                TimelinePost(date: "3 May", images: imgs([4, 6])),
+                TimelinePost(date: "1 May", images: imgs([0, 2, 5, 7])),
             ]),
             TimelineMonth(name: "Apr", posts: [
                 TimelinePost(date: "20 Apr", images: imgs([4, 0, 6, 2, 1])),  // +2
@@ -306,9 +312,9 @@ struct PersonTimelineView: View {
             .padding(.leading, ArtimindDS.Size.sidePadding + 5)
             .padding(.bottom, 4)
 
-            // Months with posts
+            // Months with posts (max 3 days per month)
             ForEach(yearGroup.months) { month in
-                // Month label
+                // Month label + photo count
                 HStack(spacing: 12) {
                     Rectangle()
                         .fill(ArtimindDS.ColorToken.stroke.opacity(0.5))
@@ -316,12 +322,38 @@ struct PersonTimelineView: View {
                     Text(month.name)
                         .font(AppFont.dmSans(.semibold, size: 14))
                         .foregroundStyle(ArtimindDS.ColorToken.textSecondary)
+
+                    Text("\(month.totalPhotos) photos")
+                        .font(AppFont.dmSans(.regular, size: 11))
+                        .foregroundStyle(ArtimindDS.ColorToken.textTertiary)
                 }
                 .padding(.leading, ArtimindDS.Size.sidePadding + 11)
                 .padding(.bottom, 2)
 
-                ForEach(month.posts) { post in
+                // Show max 3 days
+                ForEach(month.posts.prefix(3)) { post in
                     timelineRow(post: post)
+                }
+
+                // "View all X photos" if more than 3 days
+                if month.posts.count > 3 {
+                    Button {
+                        // Create a combined post with all images for the sheet
+                        let allImages = month.posts.flatMap { $0.images }
+                        selectedPost = TimelinePost(date: "\(month.name) \(yearGroup.year)", images: allImages)
+                    } label: {
+                        HStack(spacing: 6) {
+                            Text("View all \(month.totalPhotos) photos")
+                                .font(AppFont.dmSans(.medium, size: 13))
+                                .foregroundStyle(ArtimindDS.ColorToken.blue)
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 10, weight: .semibold))
+                                .foregroundStyle(ArtimindDS.ColorToken.blue)
+                        }
+                        .padding(.leading, ArtimindDS.Size.sidePadding + 30)
+                        .padding(.bottom, 8)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
         }
