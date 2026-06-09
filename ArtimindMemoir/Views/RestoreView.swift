@@ -66,6 +66,7 @@ struct RestoreView: View {
     @State private var selectedPerson: Person?
     @State private var showPeopleList = false
     @State private var hasPhotoPermission = false
+    @State private var permissionDenied = false
     @State private var permissionChecked = false
     @State private var showPhotoRestore = false
     @State private var showVoiceTribute = false
@@ -378,20 +379,37 @@ struct RestoreView: View {
                         .font(.system(size: 36))
                         .foregroundStyle(ArtimindDS.ColorToken.textTertiary)
 
-                    Text("Allow photo access to find\nyour loved ones automatically")
-                        .font(AppFont.dmSans(.regular, size: 13))
-                        .foregroundStyle(ArtimindDS.ColorToken.textSecondary)
-                        .multilineTextAlignment(.center)
+                    if permissionDenied {
+                        Text("Photo access was denied.\nGo to Settings to allow access.")
+                            .font(AppFont.dmSans(.regular, size: 13))
+                            .foregroundStyle(ArtimindDS.ColorToken.textSecondary)
+                            .multilineTextAlignment(.center)
 
-                    Button { requestPhotoPermission() } label: {
-                        Text("Allow Access")
-                            .font(AppFont.dmSans(.bold, size: 14))
-                            .foregroundStyle(.black)
-                            .padding(.horizontal, 24)
-                            .frame(height: 40)
-                            .background(Capsule().fill(.white))
+                        Button { openSettings() } label: {
+                            Text("Open Settings")
+                                .font(AppFont.dmSans(.bold, size: 14))
+                                .foregroundStyle(.black)
+                                .padding(.horizontal, 24)
+                                .frame(height: 40)
+                                .background(Capsule().fill(.white))
+                        }
+                        .buttonStyle(.plain)
+                    } else {
+                        Text("Allow photo access to find\nyour loved ones automatically")
+                            .font(AppFont.dmSans(.regular, size: 13))
+                            .foregroundStyle(ArtimindDS.ColorToken.textSecondary)
+                            .multilineTextAlignment(.center)
+
+                        Button { requestPhotoPermission() } label: {
+                            Text("Allow Access")
+                                .font(AppFont.dmSans(.bold, size: 14))
+                                .foregroundStyle(.black)
+                                .padding(.horizontal, 24)
+                                .frame(height: 40)
+                                .background(Capsule().fill(.white))
+                        }
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(.plain)
 
                     Button { showPeopleList = true } label: {
                         Text("Add manually instead")
@@ -412,14 +430,21 @@ struct RestoreView: View {
         let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
         permissionChecked = true
         hasPhotoPermission = (status == .authorized || status == .limited)
+        permissionDenied = (status == .denied || status == .restricted)
     }
 
     private func requestPhotoPermission() {
         PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
             DispatchQueue.main.async {
                 hasPhotoPermission = (status == .authorized || status == .limited)
+                permissionDenied = (status == .denied || status == .restricted)
             }
         }
+    }
+
+    private func openSettings() {
+        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+        UIApplication.shared.open(url)
     }
 }
 
